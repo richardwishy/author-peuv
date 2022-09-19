@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+
+import React from 'react';
+import { Row, Col } from 'react-bootstrap';
+
+import VerticalMenu from './components/verticalMenu/VerticalMenu';
+import HeaderAuthor from './components/headerAuthor/HeaderAuthor';
+import SearchBar from './components/searchBar/SearchBar';
+import CarouselBooks from './components/carouselBooks/CarouselBooks';
+import DescriptionAuthor from './components/descriptionAuthor/DescriptionAuthor';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Row>
+        <Col md={3}>
+          <VerticalMenu />
+        </Col>
+        <Col md={9}>
+          <SearchBar />
+          <HeaderAuthor />
+          <CarouselBooks />
+          <hr />
+          <DescriptionAuthor />
+        </Col>
+      </Row>
     </div>
   );
 }
